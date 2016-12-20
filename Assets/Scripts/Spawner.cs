@@ -2,6 +2,8 @@
 using System.Collections;
 
 //Instantiate a pipe every delay
+//a coroutine is calling a function that will complete before returning, they are used instead of update
+//check in the https://docs.unity3d.com/ScriptReference/index.html (unity3D documentation) to learn more about coroutines
 public class Spawner : MonoBehaviour
 {
 
@@ -21,6 +23,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator PipeGenerator()
     {
+		
         yield return new WaitForSeconds(delay);
 
         if (active)
